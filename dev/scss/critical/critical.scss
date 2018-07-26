@@ -1,8 +1,8 @@
-// Apenas os resets e estrutura basica da pagina para otimização do critical
+// Apenas os resets e estrutura basica da pagina para otimização do critical CSS
 
 // imports
-@import "colors";
-@import "mixins";
+@import "../colors";
+@import "../mixins";
 
 // Base
 *{outline: none !important; -webkit-tap-highlight-color: rgba(0, 0, 0, 0)}
