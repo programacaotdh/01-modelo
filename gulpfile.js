@@ -11,6 +11,7 @@ gulp.task('sass', ['clean-css'], function() {
     return gulp.src(['dev/scss/*.scss', 'dev/css/**/*.css'])
         .pipe(wait(200))
         .pipe(sass())
+        .pipe(minify())
         .pipe(gulp.dest('app/assets/css'));
 });
 

@@ -26,7 +26,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.2em;
     margin: 0
 }
@@ -138,6 +138,11 @@ a {
 .grid-2{width:16.66666667%}
 .grid-1{width:8.33333333%}
 
+// Figure
+figure {
+    margin: 0;
+}
+
 // Img
 img {
     height: auto;
@@ -146,6 +151,138 @@ img {
 
 // Link
 a {
-    color: $primary;
+    color: $primaria;
     text-decoration: none;
+}
+
+// Inputs
+input,
+select,
+textarea,
+button {
+    appearance: none;
+        -webkit-appearance: none;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: none;
+    color: $textColor;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: inherit;
+    line-height: 1.00em;
+    margin: 0;
+    outline: none;
+    padding: 15px;
+    position: relative;
+    resize: none;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+input[type="search"],
+select,
+textarea {
+    border: solid 1px $borderColor;
+    width: 100%;
+    &::-webkit-input-placeholder {
+        opacity: 0.6
+    }
+    &::-moz-placeholder {
+        opacity: 0.6
+    }
+    &:-ms-input-placeholder {
+        opacity: 0.6
+    }
+    &:-moz-placeholder {
+        opacity: 0.6
+    }
+}
+textarea {
+    height: 110px;
+}
+
+// Header
+header {
+    padding: 20px 0;
+}
+
+// Logo
+.logo {
+    margin: 0;
+    @include flex(
+        $align: center
+    );
+    a {
+        display: block;
+    }
+}
+
+// Banner Top
+.banner-topo {
+    @include flex(
+        $justify: flex-end
+    );
+    a {
+        display: block;
+    }
+}
+
+// Nav
+nav {
+    background-color: $primaria;
+    .btn-toggle-menu {
+        display: none;
+    }
+    ul {
+        @include flex(
+            $justify: center
+        );
+        li {
+            margin: 0 0 0 2px;
+            &:first-child {
+                margin: 0;
+            }
+            a {
+                color: #ffffff;
+                display: block;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.00em;
+                padding: 15px 8px;
+            }
+        }
+    }
+}
+
+// Busca
+.busca {
+    margin: 20px 0;
+    form {
+        position: relative;
+        input {
+            padding-right: 80px;
+            z-index: 1;
+        }
+        button {
+            background-color: #f2f2f2;
+            border-color: $borderColor;
+            border-style: solid;
+            border-width: 1px 1px 1px 0;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            height: 100%;
+            font-size: 14px;
+            padding: 15px 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-align: center;
+            width: 70px;
+            z-index: 2;
+        }
+    }
 }

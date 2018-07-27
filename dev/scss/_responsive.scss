@@ -1,5 +1,201 @@
-@media(min-width: 1024px) and (max-width: 1169px) { }
-@media(max-width: 1023px) { }
+@media(min-width: 1024px) and (max-width: 1199px) {
+    // Nav
+    nav {
+        ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            li {
+                a {
+                    font-size: 16px;
+                    padding: 20px 7.5px 22px
+                }
+            }
+        }
+    }
+
+    // Bloco Destaque
+    .bloco-destaque {
+        a {
+            .item-titulo {
+                font-size: 24px;
+            }
+        }
+    }
+}
+@media(min-width: 1024px) {
+    // Nav
+    nav {
+        .toggle-menu {
+            display: block !important;
+        }
+    }
+}
+@media(min-width: 641px) and (max-width: 1023px) {
+    // Nav
+    nav {
+        ul {
+            li {
+                margin: 0 0.5px 1px !important;
+                width: calc(33.33% - 1px);
+            }
+        }
+    }
+}
+@media(max-width: 1023px) {
+    // Header
+    header {
+        padding: 20px 0 30px;
+    }
+
+    // Logo
+    .logo {
+        justify-content: center;
+        width: 100%;
+    }
+
+    // Banner Topo
+    .banner-topo {
+        justify-content: center;
+        margin: 15px 0 0;
+        width: 100%;
+    }
+
+    // Nav
+    nav {
+        background-color: #ffffff;
+        .btn-toggle-menu {
+            background-color: $primaria;
+            border-radius: 0;
+            color: #ffffff;
+            display: block;
+            font-size: 18px;
+            line-height: 1.00em;
+            padding: 15px;
+            text-align: left;
+            transition: none;
+            width: 100%;
+            &::before {
+                @include backgrounds(
+                    $image: "menu.svg",
+                    $pos: center center,
+                    $size: 20px
+                );
+                content: "";
+                height: 30px;
+                margin: -15px 0 0;
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                width: 30px;
+            }
+        }
+        .toggle-menu {
+            display: none;
+        }
+        ul {
+            background-color: $primaria;
+            justify-content: flex-start;
+            padding: 0 14px 14px;
+            li {
+                a {
+                    background-color: $primariaLight;
+                    padding: 15px;
+                    text-align: center;
+                    &::before {
+                        display: none;
+                    }
+                    &:hover {
+                        background-color: $secundaria;
+                        color: $primaria;
+                    }
+                }
+                &.active {
+                    a {
+                        background-color: $secundaria;
+                        color: $primaria;
+                    }
+                }
+            }
+        }
+    }
+
+    // Noticia Destaque Home
+    .noticia-destaque-home {
+        width: 100%;
+        a {
+            .item-data {
+                left: 30px;
+            }
+        }
+    }
+
+    // Banners Conteudo
+    .banners-conteudo {
+        margin: 30px 0 0;
+        width: 100%;
+        .item {
+            margin: 20px 0 0;
+        }
+    }
+}
 @media(max-width: 767px) { }
-@media(max-width: 640px) { }
-@media(max-width: 480px) { }
+@media(max-width: 640px) {
+    // Bloco Destaque
+    .bloco-destaque {
+        a {
+            .item-conteudo {
+                padding: 0 15px 15px;
+            }
+            .item-data {
+                left: 15px;
+                padding: 10px;
+            }
+            .item-titulo {
+                font-size: 20px;
+                padding: 0 0 10px;
+            }
+            .item-descricao {
+                font-size: 14px;
+                margin: 10px 0 0;
+            }
+        }
+    }
+}
+@media(min-width: 481px) and (max-width: 640px) {
+    // Nav
+    nav {
+        ul {
+            li {
+                margin: 0 0.5px 1px !important;
+                width: calc(50% - 1px);
+            }
+        }
+    }
+}
+@media(max-width: 480px) {
+    // Nav
+    nav {
+        ul {
+            li {
+                margin: 1px 0 0;
+                width: 100%;
+            }
+        }
+    }
+
+    // Bloco Destaque
+    .bloco-destaque {
+        a {
+            .item-titulo {
+                font-size: 18px;
+                padding: 0;
+                &::before {
+                    display: none;
+                }
+            }
+            .item-descricao {
+                display: none;
+            }
+        }
+    }
+}
