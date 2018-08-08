@@ -1,0 +1,61 @@
+// Mixin FlexBox
+@mixin flex(
+    $align: flex-start,
+    $justify: flex-start,
+    $direction: row,
+    $wrap: wrap
+) {
+    align-items: $align;
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+}
+
+// Mixin Sprite Icons
+@mixin sprite(
+    $pos: center 0
+) {
+    background-image: url(../images/backgrounds/sprite-icones.png);
+    background-position: $pos;
+    background-repeat: no-repeat;
+}
+
+// Mixin Backgrounds
+@mixin backgrounds(
+        $image,
+        $pos: center 0,
+        $repeat: no-repeat,
+        $size: auto
+    ) {
+    background-image: url("../images/backgrounds/#{$image}");
+    background-position: $pos;
+    background-repeat: $repeat;
+    background-size: $size;
+}
+
+// Mixin Transition
+@mixin transition(
+    $prop: all,
+    $duration: 500ms
+) {
+    transition: $prop $duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        -webkit-transition: $prop $duration cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+        -moz-transition: $prop $duration cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+        -o-transition: $prop $duration cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+}
+
+// Carregar Icone BG
+@mixin iconeBg(
+    $content: "",
+    $fontSize: 16px
+) {
+    content: $content;
+    font-family: 'icomoon' !important;
+    font-size: $fontSize;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}

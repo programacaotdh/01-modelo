@@ -6,95 +6,95 @@
 
 // Base
 *{outline: none !important; -webkit-tap-highlight-color: rgba(0, 0, 0, 0)}
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,dialog,div,dl,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,i,iframe,img,ins,kbd,label,legend,li,main,mark,menu,meter,nav,object,ol,output,p,pre,progress,q,rp,rt,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video,xmp{border:0;margin:0;padding:0}body,html{height:100%}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}b,strong{font-weight:700}img{color:transparent;font-size:0;vertical-align:middle;-ms-interpolation-mode:bicubic}ol,ul{list-style:none}li{display:list-item}table{border-collapse:collapse;border-spacing:0}caption,td,th{font-weight:700;vertical-align:top;text-align:left}q{quotes:none}q:after,q:before{content:"";content:none}small,sub,sup{font-size:75%}sub,sup{line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}svg{overflow:hidden}
+
+// http://meyerweb.com/eric/tools/css/reset/
+// v4.0 | 20180602
+// License: none (public domain)
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+
+// HTML5 hidden-attribute fix for newer browsers
+*[hidden] {
+    display: none;
+}
 body {
-    font: 13px/1.5 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif
+	line-height: 1;
 }
-code,
-pre {
-    font-family: "DejaVu Sans Mono", Menlo, Consolas, monospace
+ol, ul {
+	list-style: none;
 }
-hr {
-    border: 0 solid #ccc;
-    border-top-width: 1px;
-    clear: both;
-    height: 0
+blockquote, q {
+	quotes: none;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 500;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
     line-height: 1.2em;
     margin: 0
 }
-h1 {
-    font-size: 25px
-}
-h2 {
-    font-size: 23px
-}
-h3 {
-    font-size: 21px
-}
-h4 {
-    font-size: 19px
-}
-h5 {
-    font-size: 17px
-}
-h6 {
-    font-size: 15px
+h1 {font-size: 25px}
+h2 {font-size: 23px}
+h3 {font-size: 21px}
+h4 {font-size: 19px}
+h5 {font-size: 17px}
+h6 {font-size: 15px}
+
+// Strong/b
+strong, b {
+	font-weight: 700;
 }
 
-ol {
-    list-style: none
-}
-ul {
-    list-style: none
-}
-li {
-    margin-left: 0
-}
-address,
-dl,
-fieldset,
-figure,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-ol,
-p,
-pre,
-table,
-ul {
-    margin-bottom: 20px
-}
-hr,
-ol,
-p,
-ul {
-    margin: 20px 0 0
-}
-hr:first-child,
-ol:first-child,
-p:first-child,
-ul:first-child {
-    margin-top: 0
-}
+// Link
 a {
 	line-height: 1.2em;
 	text-decoration: none;
 	outline: none;
 }
 
-/* GRID */
+// Img
+img {
+    max-width: 100%;
+    &[data-loaded="true"] {
+        height: auto;
+    }
+}
+
+// GRID
 .container {
     box-sizing: border-box;
     margin: 0 auto;
@@ -138,14 +138,52 @@ a {
 .grid-2{width:16.66666667%}
 .grid-1{width:8.33333333%}
 
-// Img
-img {
-    height: auto;
-    max-width: 100%;
+// Inputs
+input,
+select,
+textarea,
+button {
+    appearance: none;
+        -webkit-appearance: none;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: none;
+    color: $textColor;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: inherit;
+    line-height: 1.00em;
+    margin: 0;
+    outline: none;
+    padding: 15px;
+    position: relative;
+    resize: none;
 }
-
-// Link
-a {
-    color: $primary;
-    text-decoration: none;
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+input[type="search"],
+select,
+textarea {
+    border: solid 1px $borderColor;
+    width: 100%;
+    &::-webkit-input-placeholder {
+        opacity: 0.6
+    }
+    &::-moz-placeholder {
+        opacity: 0.6
+    }
+    &:-ms-input-placeholder {
+        opacity: 0.6
+    }
+    &:-moz-placeholder {
+        opacity: 0.6
+    }
+}
+textarea {
+    height: 130px;
 }

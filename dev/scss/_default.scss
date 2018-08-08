@@ -1,15 +1,10 @@
 body {
     color: $textColor;
-    font-family: "Arial", sans-serif;
+    font-family: "Titillium Web", sans-serif;
     font-size: 16px;
     line-height: 1.2em;
     font-weight: 400;
     overflow-y: scroll;
-}
-
-// Wrap
-.wrap {
-    overflow: hidden;
 }
 
 // Inputs
@@ -17,22 +12,7 @@ input,
 select,
 textarea,
 button {
-    background-color: #f2f2f2;
-    border: none;
-    box-sizing: border-box;
-    box-shadow: none;
-    color: $textColor;
-    display: block;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: 1.2em;
-    margin: 0;
-    outline: none;
-    padding: 15px;
-    position: relative;
-    resize: none;
-    transition: all 0.4s ease;
+    padding: 12px 15px;
 }
 input[type="text"],
 input[type="password"],
@@ -41,54 +21,47 @@ input[type="tel"],
 input[type="file"],
 select,
 textarea {
-    width: 100%;
-    &::-webkit-input-placeholder {
-        opacity: 0.6
+    transition-property: box-shadow, border-color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    &:focus {
+        border-color: $primaria;
+        box-shadow: 0 0 15px rgba(#000000, .1);
     }
-    &::-moz-placeholder {
-        opacity: 0.6
-    }
-    &:-ms-input-placeholder {
-        opacity: 0.6
-    }
-    &:-moz-placeholder {
-        opacity: 0.6
-    }
-}
-textarea {
-    height: 110px;
 }
 
 // Loading
 .loading {
-    display: none;
-    vertical-align: middle;
-    &.active {
-        display: block;
-    }
+    background-color: $primaria;
+    box-sizing: border-box;
+    border-radius: 50px;
+    color: #fff;
+    cursor: default;
+    display: block;
+    font-weight: 600;
+    line-height: 1em;
+    max-width: 370px;
+    padding: 17px 15px;
+    text-transform: uppercase;
+    width: 100%;
     > span {
-        align-items: center;
-        background-color: #ffffff;
-        color: $primary;
-        cursor: default;
-        display: flex;
-        font-weight: 400;
-        font-size: 14px;
-        justify-content: center;
-        line-height: 1.00em;
-        padding: 16px 20px 13px 20px;
+        display: table;
+        margin: 0 auto;
+        padding: 0 0 0 25px;
         position: relative;
-        text-transform: uppercase;
         .loader {
             animation: loader 1.1s infinite linear;
-            border-bottom: 3px solid rgba($primary, .3);
-            border-left: 3px solid $primary;
-            border-top: 3px solid rgba($primary, .3);
-            border-right: 3px solid rgba($primary, .3);
+            border-bottom: 3px solid rgba(#ffffff, .3);
+            border-left: 3px solid #ffffff;
+            border-top: 3px solid rgba(#ffffff, .3);
+            border-right: 3px solid rgba(#ffffff, .3);
             border-radius: 50%;
             box-sizing: border-box;
             height: 16px;
-            margin: -3.5px 10px 0 0;
+            left: 0;
+            margin: -8px 0 0 0;
+            position: absolute;
+            top: 50%;
             width: 16px;
         }
     }
@@ -113,6 +86,12 @@ textarea {
 // Form Alerts
 .form-alert {
     box-sizing: border-box;
+    @include flex(
+        $direction: column,
+        $align: center,
+        $justify: center
+    );
+    height: 100%;
     margin: 0 auto;
     max-width: 750px;
     padding: 30px;
@@ -120,9 +99,10 @@ textarea {
     width: 100%;
     svg {
         height: 50px;
+        margin: 0 0 10px;
         width: 50px;
         path {
-            fill: $primary;
+            fill: $primaria;
         }
     }
     h2 {
